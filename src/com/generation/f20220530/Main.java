@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.generation.f20220531.Cliente;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -102,9 +104,7 @@ public class Main {
 		
 		/******************************************************************/
 		
-		
-		
-		
+	
 		
 		
 		
