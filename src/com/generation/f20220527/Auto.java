@@ -7,7 +7,7 @@ public class Auto {
 	
 	/******ESTRUCTURA******/
 	//Atributo
-	//Constructores
+	//Constructores, se crean con click derecho y source -> generate constructor using fields
 	//Accesadores y mutadores (get y set)
 	//Métodos y funciones
 	/**********************/
