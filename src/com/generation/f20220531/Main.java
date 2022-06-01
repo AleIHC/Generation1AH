@@ -90,6 +90,7 @@ public class Main {
 		
 		
 		/**************************Acceder a un método de otra clase****************************/
+		
 		//Crear instancia de la clase
 		ClientManager cm = new ClientManager();//Para poder acceder al metodo de otra clase, se crea la instancia
 		cm.recorrerArregloCliente(ListaCliente);//Recorrer e imprimir cliente

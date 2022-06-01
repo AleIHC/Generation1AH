@@ -30,7 +30,7 @@ public class Funciones {
 		
 	}
 	
-	/*******************FUNCIONES QUE RETORNAN*************************/
+	/*******************FUNCIONES QUE NO RETORNAN*************************/
 	
 	//Accesador - tipo de retorno - nombre de la función(parámetros)
 	public static void calculoSumaPares(boolean verdad, int numero1, String numero2, Long numero3, String accion) {
@@ -46,7 +46,7 @@ public class Funciones {
 		System.out.println("Hola");
 	}
 	
-	/*******************FUNCIONES QUE NO RETORNAN*************************/
+	/*******************FUNCIONES QUE RETORNAN*************************/
 	
 	//funcion que retorna tipo de dato
 	public static Integer obtenerEdad() {

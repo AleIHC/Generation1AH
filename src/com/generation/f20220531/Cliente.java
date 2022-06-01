@@ -76,6 +76,7 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
+	//Método toString para devolver atributos como string
 	@Override
 	public String toString() {
 		return "Cliente [rut=" + rut + ", id=" + id + ", numerosVenta=" + numerosVenta + ", nombre=" + nombre

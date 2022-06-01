@@ -60,7 +60,6 @@ public class Condicionales {
 			System.out.println("Cuánto saldo tiene en la cuenta?");
 			double balanceAct = sc.nextFloat();
 			
-			if(balanceAct 
 		
 		}
 		
