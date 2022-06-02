@@ -8,7 +8,7 @@ public class CalculadoraTest {
 	Calculadora calc = new Calculadora();
 	
 	@Test
-	public void test() {
+	public void testLogin() {
 		int resultado = calc.suma(12, 42);
 		//assertEquals(//valorEsperado, resultado);
 		assertEquals(54, resultado);

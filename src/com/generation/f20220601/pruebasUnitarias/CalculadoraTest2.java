@@ -10,7 +10,7 @@ public class CalculadoraTest2 {
 	Calculadora calc = new Calculadora();
 	
 	@Test
-	public void testSuma() {
+	public void testLogin() {
 		int resultado = calc.suma(12, 42);
 		//assertEquals(//valorEsperado, resultado);
 		assertEquals(54, resultado);
