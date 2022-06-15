@@ -1,0 +1,136 @@
+CREATE DATABASE `ejemplo` /*!40100 COLLATE 'utf8_spanish_ci' */
+
+
+*********************Ingresar a mysql con el nuevo usuario***************
+mysql -u root -alejandro
+
+
+CREATE USER 'alejandro'@'localhost' IDENTIFIED BY 'Admin1234';
+
+GRANT ALL PRIVILEGES ON *.* TO 'alejandro'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'alejandro'@'%' IDENTIFIED BY 'Admin1234';
+
+GRANT ALL PRIVILEGES ON *.* TO 'alejandro'@'%' WITH GRANT OPTION;
+
+************************************************************************
+---ver desde terminal bases de datos creadas
+
+show databases;
+
+---crear database
+create database generationg1;
+
+-- usar la base de datos creada
+use ejemplo;
+
+-- mostrar las tablas creadas en la base de datos
+show tables;
+
+-- CREAR nuestra tabla
+CREATE TABLE nombre_tabla(
+	nombre_columna tipo_dato  restriccion
+	nombre_columna tipo_dato
+	....
+	PRIMARY KEY (nombre_columna1)
+	ADD FOREIGN KEY (nombre_columna) REFERENCES nombre_2da_tabla	(columnaPK_2daTabla)
+)
+
+*******************
+CREATE table clientes(
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nombre varchar(30) NOT NULL,
+	correo varchar(50)
+);
+
+---AUTOINCREMENT: SI NO AGREGAMOS LA PK EN LA INSERCION, CREA UNA SEGUN LA SECUENCIA
+
+
+---- Consultar la data en la tabla
+---- " * " selecciona todos los registros de la tabla
+select * from clientes;
+
+---- Inserción de registros, no necesariamente se escribe en el mismo orden de columnas, pero el valor tiene que corresponder
+INSERT INTRO nombre_tabla (columna, columna2....) VALUES(valor 1, valor2...)
+
+INSERT INTO direcciones (numero, id, nombre) VALUES (435, 5, 'Independencia');
+
+
+****************WARNING**********************
+--- Vaciar la tabla (Warning)
+truncate TABLE clientes;
+
+---Eliminar la tabla (Warning)
+DROP TABLE clientes;
+
+---Eliminar la base de datos (Warning)
+DROP DATABASE ejemplo;
+
+---Eliminar la columna
+ALTER TABLE drop column nombre_column
+****************WARNING******************
+
+
+*****ACTUALIZAR REGISTRO EN LA TABLA*****
+UPDATE nombre_tabla
+SET columna_a_modificar = valor, columna_a_modificar2 = valor2
+WHERE condicion(Permite filtrar por datos específicos
+--Update sin where
+
+UPDATE clientes 
+set nombre = 'Todd', correo = 'toddy@gml.com'
+where id =5;
+
+************WHERE y LIKE*************
+and
+or
+like '%nombre%'; es un comodin que permite encontrar algo parecido
+||        || %; con el porcentaje al final, la palabra debe comenzar así
+||    %     ||;con el porcentaje al inicio, la palabra debe terminar así
+
+
+WHERE CustomerName LIKE '%tion'
+and ContactName LIKE '%von'
+
+---Para tener un rango
+SELECT * FROM Products
+WHERE price Between 10 and 30
+
+---Para ordenar (se puede usar con strings y numeros)
+Order by price asc; 
+Order by price desc;
+
+******************************************
+
+Create table direcciones (
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	nombre varchar(100) NOT NULL,
+	numero int NOT NULL
+);
+
+---Modificar tabla
+ALTER TABLE nombre_tabla
+ADD nombre_columna tipo restriccion;
+>>>>
+
+
+ALTER TABLE clientes
+ADD direccionID int NOT NULL;
+
+---Relacionar tablas
+ALTER TABLE nombre_tabla
+ADD FOREIGN KEY (nombre_columna) REFERENCES nombre_2da_tabla(columnaPK_2daTabla)
+//Se puede agregar al crear la tabla
+
+ALTER TABLE clientes
+ADD FOREIGN KEY (direccionID) REFERENCES direcciones(id);
+>>>> 
+ALTER TABLE clientes
+ADD CONSTRAINT FK_direccionID//Asignar nombre a la relacion
+FOREIGN KEY (direccionID) REFERENCES direcciones(id);
+
+
+---Mostrar datos de la relación entre las tablas
+show create table clientes; 
+
+
